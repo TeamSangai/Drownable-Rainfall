@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "geoves.drownrain.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "RainDrownerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+	}
+}

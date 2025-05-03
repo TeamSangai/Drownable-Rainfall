@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "drownable-rainfall",
+	"version": "${version}",
+	"name": "Drownable-Rainfall",
+	"description": "Makes you Drown in Rain.",
+	"authors": [
+		"Mr.Geoves"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/drownable-rainfall/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"geoves.drownrain.DrownableRainfall"
+		],
+		"fabric-datagen": [
+			"geoves.drownrain.DrownableRainfallDataGenerator"
+		]
+	},
+	"mixins": [
+		"drownable-rainfall.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.13",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
