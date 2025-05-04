@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "drownable-rainfall",
-	"version": "${version}",
+	"version": "$1",
 	"name": "Drownable-Rainfall",
 	"description": "Makes you Drown in Rain.",
 	"authors": [

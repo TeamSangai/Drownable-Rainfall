@@ -1,16 +1,25 @@
 package geoves.drownrain.mixin;
 
 
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
+import net.minecraft.entity.LivingEntity;
 
-import net.minecraft.entity.Entity;
-
-
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.injection.At;
 
-
-
-
-@Mixin(Entity.class)
+@Mixin(LivingEntity.class)
 public abstract class RainDrownerMixin {
-    public boolean drownsInRain = false;
+    @ModifyExpressionValue(method = "baseTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;isSubmergedIn(Lnet/minecraft/registry/tag/TagKey;)Z"))
+    private boolean drownInRain(boolean original) {
+        // Copied from Entity.isBeingRainedOn
+        LivingEntity self = ((LivingEntity) (Object) this);
+        BlockPos blockPos = self.getBlockPos();
+        World world = self.getWorld();
+        boolean isBeingRainedOn = world.hasRain(blockPos)
+                || world.hasRain(BlockPos.ofFloored(blockPos.getX(), self.getBoundingBox().maxY, blockPos.getZ()));
+
+        return original || isBeingRainedOn;
+    }
 }

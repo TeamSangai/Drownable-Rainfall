@@ -3,7 +3,8 @@
   "package": "geoves.drownrain.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "RainDrownerMixin"
+    "RainDrownerMixin",
+    "RainedPlayerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
