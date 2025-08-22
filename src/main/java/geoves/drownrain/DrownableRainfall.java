@@ -19,6 +19,7 @@ public class DrownableRainfall implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
+
 		LOGGER.info("Drownable Rain Enabled!");
 	}
 }

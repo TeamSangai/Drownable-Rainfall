@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "drownable-rainfall",
-	"version": "$1",
+	"version": "1.0.0",
 	"name": "Drownable-Rainfall",
 	"description": "Makes you Drown in Rain.",
 	"authors": [
@@ -27,7 +27,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.16.13",
-		"minecraft": "~1.21.5",
+		"minecraft": "~1.21.8",
 		"java": ">=21",
 		"fabric-api": "*"
 	},

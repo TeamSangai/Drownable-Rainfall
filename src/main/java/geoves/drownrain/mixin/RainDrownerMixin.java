@@ -3,7 +3,6 @@ package geoves.drownrain.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.entity.LivingEntity;
-
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +18,7 @@ public abstract class RainDrownerMixin {
         World world = self.getWorld();
         boolean isBeingRainedOn = world.hasRain(blockPos)
                 || world.hasRain(BlockPos.ofFloored(blockPos.getX(), self.getBoundingBox().maxY, blockPos.getZ()));
-
-        return original || isBeingRainedOn;
+        return original || (isBeingRainedOn&& (self.isPlayer()));
     }
+
 }
